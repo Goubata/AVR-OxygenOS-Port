@@ -1,5 +1,9 @@
 # OxygenOS 17 for Motorola AVR（非公式移植）
 
+# フラッシュする前に必ずこのファームウェアをフラッシュしてください
+https://mirrors.lolinet.com/firmware/lenomola/2026/avr/official/RETAIL/AVR_RETAIL_16_W3WW36.65-25-3-4_subsidy-DEFAULT_regulatory-DEFAULT_cid50_CFC.xml.zip
+
+
 OnePlus 15 の **OxygenOS 17 GLO（CPH2747_17.0.0.102）** を、Motorola **AVR（XT2611、Snapdragon 8 Gen 5 "canoe"）** に移植した非公式 ROM です。このリポジトリはリリース配布専用です（IMG は [Releases](../../releases) にあります）。
 
 > **注意**：非公式のビルドです。自己責任で使ってください。焼く前に必ずバックアップを取ってください。中のファイルの権利は OnePlus／Motorola などの各社にあります。
@@ -76,5 +80,9 @@ fastboot reboot
 ---
 
 ## English (short)
-Unofficial port of **OxygenOS 17 GLO (OnePlus 15, CPH2747_17.0.0.102)** to the **Motorola AVR (XT2611, SD 8 Gen 5)**. Release-only repository; images (system, odm) are in Releases. **v1.2** (system only; keep the v1.1 odm): Bluetooth volume fix (OPlus carkit misdetection disabled absolute volume), punch-hole UI position, custom charging limit uses bypass charging. Update from v1.1 without wiping: in fastbootd, `fastboot flash system system.img`.
+Unofficial port of **OxygenOS 17 GLO (OnePlus 15, CPH2747_17.0.0.102)** to the **Motorola AVR (XT2611, SD 8 Gen 5)**. 
+Before flash port rom, please flash this firmware.
+https://mirrors.lolinet.com/firmware/lenomola/2026/avr/official/RETAIL/AVR_RETAIL_16_W3WW36.65-25-3-4_subsidy-DEFAULT_regulatory-DEFAULT_cid50_CFC.xml.zip
+
+Release-only repository; images (system, odm) are in Releases. **v1.2** (system only; keep the v1.1 odm): Bluetooth volume fix (OPlus carkit misdetection disabled absolute volume), punch-hole UI position, custom charging limit uses bypass charging. Update from v1.1 without wiping: in fastbootd, `fastboot flash system system.img`.
 Flash (unlocked bootloader, slot a, wipes data): disable vbmeta verification, then in fastbootd delete `product_a`, `system_ext_a`, `system_b`, flash `system.img` and `odm.img`, `fastboot -w`, reboot. Join the parts with `cat`, decompress with `zstd -d`, check with `SHA256SUMS.txt`. Use at your own risk; tested by the developer via DSU only.
